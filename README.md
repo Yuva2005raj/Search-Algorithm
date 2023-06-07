@@ -19,32 +19,116 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
+''' 
+Program for linear search method to match the item in a list
+Developed by:YUVARAJ B
+RegisterNumber:212222230182 
+'''
+def linearSearch(array,n,k):
+    for i in range(0, n):
+        if (array[i]==k):
+            return i
+    return -1
+    
+    
+array = eval(input())
+k =eval(input())
+n=len(array)
+array.sort()
+result = linearSearch(array,n,k)
+if(result == -1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
+def binarySearchIter(array, k, low, high):
+    while low<=high:
+        mid=low+(high-low)//2
 
+        if array[mid]==k:
+            return mid
 
+        elif array[mid] < k:
+            low =mid +1
 
+        else:
+            high =mid -1
+            
+    return -1
+    
+    
+array = eval(input())
+array.sort()
+k =eval (input())
 
+result = binarySearchIter(array, k, 0, len(array)-1)
 
+if (result == -1):
+
+   print(array)
+
+   print("Element not found")
+
+else:
+    print(array)
+
+    print("Element found at index: ",result)
+    
+    
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
+def BinarySearch(arr, k, low, high):
+    if high >=low:
+        mid = low + (high - low)//2
+        
+        if arr[mid] == k:
+            return mid
+            
+        elif arr[mid] > k:
+            return BinarySearch(arr, k, low, mid-1)
+            
+        else:
+            return BinarySearch(arr, k, mid+1, high)
+            
+    else:
+        return -1
+arr = eval(input())
+arr.sort()
+k = eval(input())
+result = BinarySearch(arr, k, 0, len(arr)-1)
 
-
-
-
-
+if(result == -1):
+    
+    print(arr)
+    
+    print("Element not found")
+    
+else:
+    
+    print(arr)
+    
+    print("Element found at index: ",result)
+    
+    
 ```
 ## Sample Input and Output
+i)	#Use a linear search method to match the item in a list.
 
+![image](https://github.com/Yuva2005raj/Search-Algorithm/assets/118343998/ef3beee5-7075-417b-adb9-bb92b598e5ca)
 
+ii)	# Find the element in a list using Binary Search(Iterative Method).
 
+![image](https://github.com/Yuva2005raj/Search-Algorithm/assets/118343998/e3502a51-cb78-472b-8152-3cfd53170dcd)
 
+iii)	# Find the element in a list using Binary Search (recursive Method).
 
+![image](https://github.com/Yuva2005raj/Search-Algorithm/assets/118343998/84628712-6c65-471a-b413-93069a54495f)
 
 ## Result
 Thus the linear search and binary search algorithm is implemented using python programming.
